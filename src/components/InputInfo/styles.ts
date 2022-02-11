@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 32.25rem;
+  width: 40.625rem;
   /* width: 650px; */
   height: 22.0625rem;
 
   background: var(--primary);
 
+  border: 1px solid var(--box-border);
   border-radius: 3px;
 
   padding: 1.5rem 1.5rem 3rem;
@@ -34,6 +35,8 @@ export const Container = styled.div`
     > input {
       width: 100%;
       min-height: 2.5rem;
+
+      color: #fff;
 
       padding: 0.75rem 1rem;
 

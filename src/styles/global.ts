@@ -4,12 +4,16 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --primary: #2b2b2b;
         --secondary: #343434;
+
+        --box-border: #3b3b3b;
     
         --primary-text: #9f9f9f;
 
         --input: #494949;
         --primary-button: #5f5f5f;
         --secondary-button: #313131;
+
+        --feed-color: #7a7a7a;
     }
 
     * {
