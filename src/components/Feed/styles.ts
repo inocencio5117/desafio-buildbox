@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Title = styled.span`
-  width: 40.625rem;
+  min-width: 40.625rem;
 
   color: var(--feed-color);
 
   margin-bottom: 0.5rem;
+
+  @media screen and (max-width: 615px) {
+    min-width: 90%;
+    height: auto;
+  }
 `;
 
 export const Container = styled.div`
@@ -94,5 +99,10 @@ export const Container = styled.div`
         }
       }
     }
+  }
+
+  @media screen and (max-width: 615px) {
+    width: 90%;
+    height: auto;
   }
 `;

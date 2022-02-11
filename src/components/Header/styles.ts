@@ -13,6 +13,5 @@ export const Container = styled.header`
   img {
     height: 2.8125rem;
     width: 7.1875rem;
-    object-fit: contain;
   }
 `;

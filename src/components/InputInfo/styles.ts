@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 40.625rem;
   /* width: 650px; */
-  height: 22.0625rem;
+  min-height: 22.0625rem;
 
   background: var(--primary);
 
   border: 1px solid var(--box-border);
   border-radius: 3px;
 
-  padding: 1.5rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 2rem;
   color: var(--primary-text);
 
   margin: 2.5rem 1.5rem;
@@ -79,6 +79,21 @@ export const Container = styled.div`
 
         color: var(--primary-button);
         text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (max-width: 615px) {
+    width: 90%;
+    min-height: 45%;
+
+    form {
+      > input {
+        min-height: 4rem;
+      }
+
+      .btn-container {
+        justify-content: center;
       }
     }
   }

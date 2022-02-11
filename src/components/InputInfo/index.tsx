@@ -28,6 +28,8 @@ export function InputInfo({
   function handleUserSubmit(event: React.FormEvent) {
     event.preventDefault();
 
+    if (name === "" || text === "") return;
+
     setUserInput([{ name, text }, ...userInput]);
 
     setName("");
