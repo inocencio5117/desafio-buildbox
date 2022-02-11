@@ -70,7 +70,7 @@ export function InputInfo({
           <button type="button" onClick={clearFields}>
             Descartar
           </button>
-          <PostButton type="submit" isFilled={name === "" && text === ""}>
+          <PostButton type="submit" isFilled={name === "" || text === ""}>
             Publicar
           </PostButton>
         </div>
