@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container } from "./styles";
+import { Container, PostButton } from "./styles";
 
 import { FiImage } from "react-icons/fi";
 
@@ -28,7 +28,7 @@ export function InputInfo({
   function handleUserSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    setUserInput([...userInput, { name, text }]);
+    setUserInput([{ name, text }, ...userInput]);
 
     setName("");
     setText("");
@@ -68,7 +68,9 @@ export function InputInfo({
           <button type="button" onClick={clearFields}>
             Descartar
           </button>
-          <button type="submit">Publicar</button>
+          <PostButton type="submit" isFilled={name === "" && text === ""}>
+            Publicar
+          </PostButton>
         </div>
       </form>
     </Container>

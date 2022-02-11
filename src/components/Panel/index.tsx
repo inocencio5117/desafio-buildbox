@@ -14,10 +14,6 @@ export function Panel() {
 
   const [userInput, setUserInput] = useState<userInput[]>([]);
 
-  // useEffect(() => {
-  //   setUserInput([...userInput]);
-  // }, [setUserInput, userInput]);
-
   return (
     <Container>
       <InputInfo

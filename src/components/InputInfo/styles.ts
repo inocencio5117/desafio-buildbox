@@ -44,9 +44,16 @@ export const Container = styled.div`
       border-color: var(--input);
       border-radius: 0.5rem;
 
+      transition: all 250ms ease-in-out;
+
       &::placeholder {
         font-size: 0.875rem;
         color: var(--primary-text);
+      }
+
+      &:focus {
+        border: 1px solid var(--primary-text);
+        outline: var(--primary-text);
       }
     }
 
@@ -73,16 +80,28 @@ export const Container = styled.div`
         color: var(--primary-button);
         text-decoration: underline;
       }
-
-      button:last-child {
-        padding: 0.75rem 1.5rem;
-
-        color: var(--secondary-button);
-        background-color: var(--primary-button);
-
-        border-color: var(--primary-button);
-        border-radius: 8px;
-      }
     }
+  }
+`;
+
+interface PostButtonProps {
+  isFilled: boolean;
+}
+
+export const PostButton = styled.button<PostButtonProps>`
+  padding: 0.75rem 1.5rem;
+
+  color: var(--secondary-button);
+  color: ${(props) => (props.isFilled ? "#313131" : "#fff")};
+  background-color: ${(props) => (props.isFilled ? "#5f5f5f" : "#71bb00")};
+
+  border-color: ${(props) => (props.isFilled ? "#5f5f5f" : "#71bb00")};
+
+  border-radius: 8px;
+
+  transition: all 350ms ease-in-out;
+
+  &:hover {
+    filter: brightness(0.8);
   }
 `;
