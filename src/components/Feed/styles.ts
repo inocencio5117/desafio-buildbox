@@ -24,7 +24,7 @@ export const Container = styled.div`
   padding: 0 1.25rem 2.5rem;
   color: var(--primary-text);
 
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
 
   .close-button-container {
     display: flex;
@@ -38,6 +38,8 @@ export const Container = styled.div`
       color: #cb5522;
       height: 1.5625rem;
       width: 1.5625rem;
+
+      cursor: pointer;
     }
   }
 

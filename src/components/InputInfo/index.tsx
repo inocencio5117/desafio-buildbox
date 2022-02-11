@@ -1,22 +1,74 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "./styles";
 
 import { FiImage } from "react-icons/fi";
 
-export function InputInfo() {
+interface UserInput {
+  name: string;
+  text: string;
+}
+
+interface InputInfoProps {
+  name: string;
+  text: string;
+  userInput: UserInput[];
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  setText: React.Dispatch<React.SetStateAction<string>>;
+  setUserInput: React.Dispatch<React.SetStateAction<UserInput[]>>;
+}
+
+export function InputInfo({
+  setName,
+  setText,
+  name,
+  text,
+  setUserInput,
+  userInput,
+}: InputInfoProps) {
+  function handleUserSubmit(event: React.FormEvent) {
+    event.preventDefault();
+
+    setUserInput([...userInput, { name, text }]);
+
+    setName("");
+    setText("");
+  }
+
+  function clearFields() {
+    setName("");
+    setText("");
+  }
+
+  useEffect(() => {
+    setName(name);
+    setText(text);
+  }, [name, setName, setText, setUserInput, text, userInput]);
+
   return (
     <Container>
       <div className="image-fake">
         <FiImage />
       </div>
 
-      <form action="">
-        <input type="text" placeholder="Digite seu nome" />
-        <input type="text" placeholder="Mensagem" />
+      <form onSubmit={(e) => handleUserSubmit(e)}>
+        <input
+          type="text"
+          value={name}
+          placeholder="Digite seu nome"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          value={text}
+          placeholder="Mensagem"
+          onChange={(e) => setText(e.target.value)}
+        />
 
         <div className="btn-container">
-          <button type="button">Descartar</button>
-          <button type="button">Publicar</button>
+          <button type="button" onClick={clearFields}>
+            Descartar
+          </button>
+          <button type="submit">Publicar</button>
         </div>
       </form>
     </Container>
