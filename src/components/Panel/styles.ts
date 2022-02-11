@@ -6,9 +6,10 @@ export const Container = styled.main`
   align-items: center;
   flex-direction: column;
 
-  height: 72.75rem;
+  /* min-height: 72.75rem; */
+  min-height: 100%;
 
-  padding: 0 0 10.625rem;
+  padding-bottom: 1rem;
 
   background: var(--secondary);
 `;

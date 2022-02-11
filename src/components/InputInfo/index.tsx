@@ -59,8 +59,8 @@ export function InputInfo({
           placeholder="Digite seu nome"
           onChange={(e) => setName(e.target.value)}
         />
-        <input
-          type="text"
+        <textarea
+          // type="text"
           value={text}
           placeholder="Mensagem"
           onChange={(e) => setText(e.target.value)}

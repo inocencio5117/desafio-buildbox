@@ -24,7 +24,7 @@ export const Container = styled.div`
   border: 1px solid var(--box-border);
   background: var(--primary);
 
-  border-radius: 3px;
+  border-radius: 0.1875rem;
 
   padding: 0 1.25rem 2.5rem;
   color: var(--primary-text);
@@ -58,11 +58,11 @@ export const Container = styled.div`
     display: flex;
 
     .image-container {
-      height: 88px;
-      width: 88px;
+      height: 5.5rem;
+      width: 5.5rem;
 
       border: 1px solid #4b4b4b;
-      border-radius: 36px;
+      border-radius: 2.25rem;
 
       padding: 2rem;
       margin-right: 2rem;

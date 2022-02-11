@@ -8,19 +8,19 @@ export const Container = styled.div`
   background: var(--primary);
 
   border: 1px solid var(--box-border);
-  border-radius: 3px;
+  border-radius: 0.1875rem;
 
-  padding: 1.5rem 1.5rem 2rem;
+  padding: 1.5rem 1.5rem 1rem;
   color: var(--primary-text);
 
   margin: 2.5rem 1.5rem;
 
   .image-fake {
-    height: 88px;
-    width: 88px;
+    height: 5.5rem;
+    width: 5.5rem;
 
     border: 1px solid #4b4b4b;
-    border-radius: 36px;
+    border-radius: 2.25rem;
 
     padding: 2rem;
     margin: 0 auto;
@@ -32,7 +32,8 @@ export const Container = styled.div`
 
     margin: 1rem auto;
 
-    > input {
+    > input,
+    textarea {
       width: 100%;
       min-height: 2.5rem;
 
@@ -57,10 +58,10 @@ export const Container = styled.div`
       }
     }
 
-    input + input {
+    input + textarea {
       margin: 0.5rem 0 2rem 0;
 
-      height: 5rem;
+      min-height: 5rem;
 
       padding-bottom: 2.5rem;
     }
@@ -85,7 +86,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 615px) {
     width: 90%;
-    min-height: 45%;
+    min-height: 40%;
 
     form {
       > input {
