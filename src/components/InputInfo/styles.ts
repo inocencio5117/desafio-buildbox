@@ -63,7 +63,7 @@ export const Container = styled.div`
 
       min-height: 5rem;
 
-      padding-bottom: 2.5rem;
+      padding-bottom: 1rem;
     }
 
     .btn-container {

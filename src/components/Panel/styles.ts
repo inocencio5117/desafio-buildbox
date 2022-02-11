@@ -6,8 +6,8 @@ export const Container = styled.main`
   align-items: center;
   flex-direction: column;
 
-  /* min-height: 72.75rem; */
-  min-height: 100%;
+  min-height: 72.75rem;
+  height: 100%;
 
   padding-bottom: 1rem;
 

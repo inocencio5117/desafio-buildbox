@@ -60,7 +60,8 @@ export function InputInfo({
           onChange={(e) => setName(e.target.value)}
         />
         <textarea
-          // type="text"
+          rows={3}
+          cols={33}
           value={text}
           placeholder="Mensagem"
           onChange={(e) => setText(e.target.value)}
