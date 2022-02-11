@@ -40,6 +40,12 @@ export const Container = styled.div`
       width: 1.5625rem;
 
       cursor: pointer;
+
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        filter: brightness(0.75);
+      }
     }
   }
 
