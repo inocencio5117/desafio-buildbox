@@ -58,15 +58,26 @@ export const Container = styled.div`
     display: flex;
 
     .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       height: 5.5rem;
       width: 5.5rem;
 
       border: 1px solid #4b4b4b;
       border-radius: 2.25rem;
 
-      padding: 2rem;
+      /* padding: 2rem; */
       margin-right: 2rem;
       margin-left: 0.75rem;
+
+      > img {
+        height: 5.4rem;
+        width: 5.4rem;
+
+        border-radius: 2.25rem;
+      }
     }
 
     .text-section {

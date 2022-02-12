@@ -8,6 +8,7 @@ import { Container, Title } from "./styles";
 interface Input {
   name: string;
   text: string;
+  imgUrl: never[];
 }
 
 interface HeaderProps {
@@ -25,14 +26,18 @@ export function Feed({ userInput, setUserInput }: HeaderProps) {
       <Title>Feed</Title>
 
       {userInput.map((value) => (
-        <Container>
+        <Container key={value.name}>
           <div className="close-button-container">
             <AiOutlineCloseCircle onClick={() => removeItem(value)} />
           </div>
 
           <div className="content-wrapper">
             <div className="image-container">
-              <FiImage />
+              {value.imgUrl.length === 1 ? (
+                <img src={value.imgUrl[0]["data_url"]} alt="" />
+              ) : (
+                <FiImage />
+              )}
             </div>
 
             <div className="text-section">

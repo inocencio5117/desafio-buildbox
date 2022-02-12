@@ -24,6 +24,57 @@ export const Container = styled.div`
 
     padding: 2rem;
     margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .upload__image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+
+      > svg {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      > img {
+        height: 5.5rem;
+        width: 5.5rem;
+
+        border-radius: 2.25rem;
+
+        object-fit: fill;
+
+        margin-left: 15%;
+        /* padding: 0 -11%; */
+        /* margin: 0rem 1rem 0rem 1rem; */
+      }
+
+      > button {
+        position: relative;
+        /* left: 47.6875rem; */
+        /* left: 51.5rem;
+        top: 11.75rem; */
+        left: 1.15rem;
+
+        background-color: transparent;
+        border: none;
+
+        > svg {
+          color: red;
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+
+    input[type="file"] {
+      display: none;
+    }
   }
 
   form {

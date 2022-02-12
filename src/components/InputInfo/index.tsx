@@ -1,20 +1,25 @@
 import React, { useEffect } from "react";
 import { Container, PostButton } from "./styles";
 
-import { FiImage } from "react-icons/fi";
+import { FiImage, FiTrash } from "react-icons/fi";
+
+import ReactImageUploading, { ImageListType } from "react-images-uploading";
 
 interface UserInput {
   name: string;
   text: string;
+  imgUrl: never[];
 }
 
 interface InputInfoProps {
   name: string;
   text: string;
+  imgUrl: never[];
   userInput: UserInput[];
   setName: React.Dispatch<React.SetStateAction<string>>;
   setText: React.Dispatch<React.SetStateAction<string>>;
   setUserInput: React.Dispatch<React.SetStateAction<UserInput[]>>;
+  setImgUrl: React.Dispatch<React.SetStateAction<never[]>>;
 }
 
 export function InputInfo({
@@ -22,6 +27,8 @@ export function InputInfo({
   setText,
   name,
   text,
+  imgUrl,
+  setImgUrl,
   setUserInput,
   userInput,
 }: InputInfoProps) {
@@ -30,10 +37,11 @@ export function InputInfo({
 
     if (name === "" || text === "") return;
 
-    setUserInput([{ name, text }, ...userInput]);
+    setUserInput([{ name, text, imgUrl }, ...userInput]);
 
     setName("");
     setText("");
+    setImgUrl([]);
   }
 
   function clearFields() {
@@ -41,15 +49,64 @@ export function InputInfo({
     setText("");
   }
 
+  function handleImgInput(
+    imageList: ImageListType,
+    addUpdateIndex: number[] | undefined
+  ) {
+    console.log(imageList);
+
+    setImgUrl(imageList as never[]);
+  }
+
   useEffect(() => {
     setName(name);
     setText(text);
-  }, [name, setName, setText, setUserInput, text, userInput]);
+    setImgUrl(imgUrl);
+  }, [
+    imgUrl,
+    name,
+    setImgUrl,
+    setName,
+    setText,
+    setUserInput,
+    text,
+    userInput,
+  ]);
 
   return (
     <Container>
       <div className="image-fake">
-        <FiImage />
+        <ReactImageUploading
+          acceptType={["jpg", "png", "gif"]}
+          value={imgUrl}
+          onChange={handleImgInput}
+          dataURLKey="data_url"
+        >
+          {({ onImageUpload, onImageRemove, dragProps }) => (
+            <div className="upload__image-wrapper">
+              {imgUrl.length === 1 ? null : (
+                <FiImage onClick={onImageUpload} {...dragProps} />
+              )}
+              {/* {imageList.map((image, index) => (
+                <>
+                  <img src={image["data_url"]} alt="" width="100" />
+                  <button onClick={() => onImageUpdate(index)}>Update</button>
+                  <button onClick={() => onImageRemove(index)}>Remove</button>
+                </>
+              ))} */}
+
+              {imgUrl.length === 1 ? (
+                <>
+                  <img src={imgUrl[0]["data_url"]} alt="" />
+
+                  <button onClick={() => onImageRemove(0)}>
+                    <FiTrash />
+                  </button>
+                </>
+              ) : null}
+            </div>
+          )}
+        </ReactImageUploading>
       </div>
 
       <form onSubmit={(e) => handleUserSubmit(e)}>
