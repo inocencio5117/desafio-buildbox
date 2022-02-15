@@ -37,7 +37,7 @@ export const Container = styled.div`
 
     width: 100%;
 
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 1rem 0;
 
     > svg {
       color: #cb5522;
