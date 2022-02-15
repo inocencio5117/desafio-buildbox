@@ -60,7 +60,7 @@ export const Container = styled.div`
         border: none;
 
         > svg {
-          color: red;
+          color: #cb5522;
           height: 1.5rem;
           width: 1.5rem;
         }
