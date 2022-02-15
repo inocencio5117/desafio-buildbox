@@ -87,17 +87,10 @@ export function InputInfo({
               {imgUrl.length === 1 ? null : (
                 <FiImage onClick={onImageUpload} {...dragProps} />
               )}
-              {/* {imageList.map((image, index) => (
-                <>
-                  <img src={image["data_url"]} alt="" width="100" />
-                  <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button>
-                </>
-              ))} */}
 
               {imgUrl.length === 1 ? (
                 <>
-                  <img src={imgUrl[0]["data_url"]} alt="" />
+                  <img src={imgUrl[0]["data_url"]} alt="Profile" />
 
                   <button onClick={() => onImageRemove(0)}>
                     <FiTrash />

@@ -68,7 +68,6 @@ export const Container = styled.div`
       border: 1px solid #4b4b4b;
       border-radius: 2.25rem;
 
-      /* padding: 2rem; */
       margin-right: 2rem;
       margin-left: 0.75rem;
 

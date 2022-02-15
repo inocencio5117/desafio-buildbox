@@ -29,6 +29,8 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
+    object-fit: fill;
+
     .upload__image-wrapper {
       display: flex;
       align-items: center;
@@ -43,22 +45,15 @@ export const Container = styled.div`
 
       > img {
         height: 5.5rem;
-        width: 5.5rem;
+        min-width: 5.5rem;
 
         border-radius: 2.25rem;
 
-        object-fit: fill;
-
-        margin-left: 15%;
-        /* padding: 0 -11%; */
-        /* margin: 0rem 1rem 0rem 1rem; */
+        margin-left: 20%;
       }
 
       > button {
         position: relative;
-        /* left: 47.6875rem; */
-        /* left: 51.5rem;
-        top: 11.75rem; */
         left: 1.15rem;
 
         background-color: transparent;

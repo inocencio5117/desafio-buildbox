@@ -18,7 +18,7 @@ interface HeaderProps {
 
 export function Feed({ userInput, setUserInput }: HeaderProps) {
   function removeItem(item: Input) {
-    setUserInput(userInput.filter((input) => input.name !== item.name));
+    setUserInput(userInput.filter((input) => input !== item));
   }
 
   return (
