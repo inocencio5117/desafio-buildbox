@@ -96,8 +96,8 @@ export const Container = styled.div`
         flex-direction: column;
 
         span:first-child {
-          font-size: 0.75rem;
           font-weight: 500;
+          font-size: 0.75rem;
 
           margin-bottom: 0.25rem;
 
@@ -106,6 +106,7 @@ export const Container = styled.div`
 
         span:last-child {
           color: var(--feed-color);
+          font-size: 0.875rem;
         }
       }
     }
